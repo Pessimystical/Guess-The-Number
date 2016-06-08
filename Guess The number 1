@@ -1,0 +1,31 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class Main {
+
+	public static int number, guess, maxValue;
+	public static Scanner scan;
+	public static Random rand;
+
+	public static void main(String args[]) {
+		scan = new Scanner(System.in);
+		rand = new Random();
+		System.out.print("please input a maximum vale to guess from:");
+		maxValue = scan.nextInt();
+		number = rand.nextInt(maxValue);
+		
+		System.out.print("Please enter a guess:  ");
+		while (guess != number) {
+
+			guess = scan.nextInt();
+			if (guess > number) {
+				System.out.print("Your guess is too high!");
+			}
+			if (guess < number) {
+				System.out.print("your guess is too low!");
+			}
+
+		}
+		System.out.print("you win!");
+	}
+}
